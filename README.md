@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Lokendra Pal Singh
 - 👀 I’m interested in exploring new technologies.
-- 🌱 I’m currently learning Advance Diploma in Information Technology 
+- 🌱 I’m currently learning Cloud computing and Networking.
 - 📫 How to reach me-7426087949
 
 <!---
