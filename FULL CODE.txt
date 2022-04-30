@@ -1,0 +1,81 @@
+			"FULL CODE FOR THE GIVEN PROJECT"
+                 ---------------------------------- 
+                 
+
+#importing dependencies
+import pandas as pd
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import math
+
+#importing data
+data = pd.read_csv("C:\\Users\\ASUS\\Desktop\\LOKENDRA OJT DATA\\RRfraudTest.csv")
+
+#checking imported data 
+data.head()
+data.tail()
+data.describe
+data.shape
+#data description
+data.describe()
+
+#checking whether there is any null values
+data.isnull().sum()
+
+#relational plot using seaborn
+sns.relplot(x= 'is_fraud', y='state', data=data)
+sns.relplot(x= 'is_fraud', y='Age', data=data)
+sns.relplot(x= 'is_fraud', y='category', data=data)
+sns.relplot(x= 'is_fraud', y='gender', data=data)
+sns.relplot(x= 'is_fraud', y='Time', hue='category', data=data)
+
+#importing models
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+#training and testing data
+train = data.drop(['Time','gender','merchant','category','merchant','state','job'], axis=1)
+test = data['is_fraud']
+X_train, X_test, y_train, y_test = train_test_split(train, test, test_size=0.3)
+
+#importing Linear regression
+regr = LinearRegression()
+
+#fit the data into the model
+regr.fit(X_train, y_train)
+
+#predictive analyis using X_test data
+pred = regr.predict(X_test)
+pred
+regr.score(X_test, y_test)
+sns.countplot(x="is_fraud", data=data)
+sns.countplot(x="is_fraud", hue="gender", data=data)
+sns.countplot(x="is_fraud", hue="Age", data=data)
+
+#histogram using data "Age"
+data["Age"].plot.hist()
+data["is_fraud"].plot.hist(bins=20, figsize=(10,5))
+
+#emabarking the data by getting dummies
+embark=pd.get_dummies(data["state"],drop_first=True)
+embark.head(5)
+
+#importing model Logistic Regression
+from sklearn.linear_model import LogisticRegression
+logmodel.fit(X_train, y_train)
+predict = logmodel.predict(X_test)
+from sklearn.metrics import classification_report
+
+#classification report of the model
+classification_report(y_test,predict)
+
+#confusion matrix against this model
+from sklearn.metrics import confusion_matrix
+confusion_matrix(y_test,predict)
+from sklearn.metrics import accuracy_score
+
+#accuracy score against this model
+accuracy_score(y_test,predict)
+
