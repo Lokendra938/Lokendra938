@@ -1,9 +1,1 @@
-- 👋 Hi, I’m @Lokendra Pal Singh
-- 👀 I’m interested in exploring new technologies.
-- 🌱 I’m currently learning Cloud computing and Networking.
-- 📫 How to reach me-7426087949
-
-<!---
-Lokendra938/Lokendra938 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+[README (1).txt](https://github.com/Lokendra938/Lokendra938/files/8596774/README.1.txt)
